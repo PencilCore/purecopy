@@ -683,7 +683,7 @@ html{
     display: block;
     opacity: 0;
     transition: opacity 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
-    padding: 20px;
+    padding: 60px;
     z-index: 5;
 }
 
@@ -737,6 +737,7 @@ html{
 }
 
 #favicon-text{
+    opacity:0;
     position: relative;
     left: 15px;
     height: 70px;
