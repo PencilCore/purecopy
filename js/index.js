@@ -9,20 +9,18 @@ window.mobileCheck = function() {
     return check;
   };
 
-document.onmousemove = function (mousemoveevent){   
-    mousemoveevent = mousemoveevent || window.mousemoveevent;   
-    let cursorLeft = mousemoveevent.clientX;   
-    let cursorTop = mousemoveevent.clientY;
-    document.getElementById("tips").style.left=cursorLeft + option.cursor_l_offset +"px";
-    document.getElementById("tips").style.top=cursorTop + option.cursor_t_offset +"px";
-} 
-
 if (window.mobileCheck() == false){
+    document.onmousemove = function (mousemoveevent){   
+        mousemoveevent = mousemoveevent || window.mousemoveevent;   
+        let cursorLeft = mousemoveevent.clientX;   
+        let cursorTop = mousemoveevent.clientY;
+        document.getElementById("tips").style.left=cursorLeft + option.cursor_l_offset +"px";
+        document.getElementById("tips").style.top=cursorTop + option.cursor_t_offset +"px";
+    } 
     function hovertip(str){ 
         document.getElementById("tips").innerHTML=str;
         document.getElementById("tips").style.opacity = 0.9;
         document.getElementById("tips").style.transform = "scaleY(1)";
-    
     }
     function hovertipoff(){
         document.getElementById("tips").style.opacity = 0;
@@ -113,13 +111,14 @@ function copyText(obj){
         loginloadingbox.style.zIndex = 0;
     }
     loginbox.classList.add("zIndex40")
-    ctrlbox.classList.add("opacity0")
     function controlOn(){
         ctrlbox.style.opacity = 1;
         ctrlbox.style.zIndex = 10;
         loginbox.classList.remove("zIndex40")
         document.getElementById("func-button").style.opacity = 1
-        ctrlbox.classList.remove("opacity0")
+        if(window.screen.width< 975){
+            ctrlbox.classList.add("opacity0")
+        }
         loginOff()
     }
     function controlOff(){
