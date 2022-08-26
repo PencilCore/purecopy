@@ -79,6 +79,7 @@ function copyText(obj){
         loginbox.style.zIndex = 5;
     }
     function changePassWordOn(){
+        loginLoadingOff();
         changepasswordbox.style.opacity = 0.8;
         changepasswordbox.style.zIndex = 10;
         controlOff()
@@ -155,8 +156,8 @@ document.getElementById("copyroom-input").onclick= function(){
 }
 
 document.getElementById("login-button").onclick = copyRoomLogin;
-function copyRoomLogin(){
-    
+function copyRoomLogin(){ 
+    loginLoadingOn();
     var loginInData = new FormData(document.getElementById("login-form"));
     $.ajax({
             cache: false,
@@ -171,11 +172,13 @@ function copyRoomLogin(){
                 console.log()
                 if(result[0].password_change_require == true && document.getElementById("copyroompassword-input").value != ""){
                     if(result[0].admin == 1){
+                        loginLoadingOff();
                         changepasswordbox.innerHTML="管理员指定不可设置密码<br/><button class='waves-effect waves-light white z-depth-1' id='change-password-button-no'>是</button>";
                         document.getElementById("change-password-button-no").onclick = changePassWordOff;
                     }
                     changePassWordOn();
                     document.getElementById("change-password-button").onclick= function changePassword(){
+                        loginLoadingOn();
                         $.ajax({
                             url: "changepassword.php",
                             type: "post",
@@ -189,25 +192,25 @@ function copyRoomLogin(){
                                 var result = JSON.parse(resultjson);
                                 console.log(result);
                                 changePassWordOff();
-                                copyRoomLogin;
+                                copyRoomLogin();
+                                loginLoadingOff();
                             }
                         })
                     }
-                    
-                    
                 }else if(result[0].password_verify == true){
                     //进入剪贴板
-                    loginLoadingOn();
                     getClipBoardData();
-                    loginLoadingOff();
                     document.getElementById("copyroompassword-input").classList.remove("invalid");
                     document.getElementById("copyroom-input").classList.remove("invalid"); 
                     controlOn(); 
+                    loginLoadingOff();
                 }else if(result[0].copyroom_exists == true && result[0].password_verify == false){
                     document.getElementById("copyroom-input").classList.add("invalid"); 
                     document.getElementById("copyroompassword-input").classList.add("invalid"); 
+                    loginLoadingOff();
                 }else if(result[0].password_verify == false){
                     document.getElementById("copyroompassword-input").classList.add("invalid");
+                    loginLoadingOff();
                 }
             }
         })
@@ -262,8 +265,6 @@ function cloudSync(){
 }
 
 function getClipBoardData(){
-    loginLoadingOn();
-
     var copyroom_name = $.cookie("copyroom_name_latest");
     var data_list = document.createElement("ul");
     data_list.id="data-list"
@@ -308,7 +309,6 @@ function getClipBoardData(){
                     result_li.appendChild(result_li_span);
                     result_li_span.appendChild(result_li_span_time);
                     data_list.appendChild(result_li);
-                      
                 }
                 data_count = document.createElement("div");
                 data_count.setAttribute("id","data-count-sign");
@@ -327,7 +327,7 @@ function getClipBoardData(){
 
             }
         })
-    loginLoadingOff();
+    
 }
 
 
