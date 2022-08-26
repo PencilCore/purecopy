@@ -43,56 +43,13 @@
                     <circle class="path" cx="25" cy="25.2" r="19.9" fill="none" stroke-width="4" stroke-miterlimit="10" />
                 </svg>
             </div>
-   
-
-            <!-- <ul id="data-list">
-                
-                <li class="data-list-item waves-effect waves-light" onclick="copyText(this)" onmouseover="hovertip('单击复制')" onmouseout="hovertipoff()">
-                    <div id="newest-data-sign">
-                        最新的
-                    </div>
-                    <p class="data-list-item-content">經這不深被保回分們不外著上的一。
-在更容的一叫不物了在關非說。
-後特明的里。相巴者源車去將種因安……作黑上病數非、爾合性：主新日了立……首至易金的當第；一健用有。木民家參做水……推是字由頭錢們全越。美以頭公：山稱性多座部下個告味北面高，大來體聲司別光積化來如們對石太的買能營火性道常少了支賣源人工加明地，果雖火微苦天動沒水非孩子開聲洲陸一需員嗎大研本系你；一遊失道望流里本也女我人已一都落意變詩？於前呢研在加：獨們轉只唱不月成少是生，南受持目引的風的送關就原過演一上舞成的小痛同師常……雖是求，氣資最，力亮建者進股切法說拿那而英我它成都生下實導分種兒上。
-影不我相。夫格意死結；苦資片結動，單終是，去此公照劇大地不！民人資你力，係支西的、記看合使的現……全減技話樣動觀路就南待；知標起文合子結國當。由防的藥形喜！有經油經中子世不己發；不兒遊路的所家種中通多常成難是能！
-音大西黃心家真民客標童說不洋成賣：處用不、推兩的朋會向足技向中文舞形做信！常致來對，車長去設科勢地我度母物一和！存師了者，較自快日音行他給覺方主家目，興告考林感不多時興多名自談黃的北經雜！
-                    </p>
-                    <span class="data-list-item-info">
-                        <span class="data-list-item-info-time">5/26 18:35</span>
-                        <span class="data-list-item-info-ip"></span>
-                    </span>
-                    
-                </li>
-                
-                <li class="data-list-item waves-effect waves-light" onclick="copyText(this)" onmouseover="hovertip('单击复制')" onmouseout="hovertipoff()">
-                    <p class="data-list-item-content">
-                    經這不深被保回分們不外著上的一。                    </p>
-                    <span class="data-list-item-info">
-                        <span class="data-list-item-info-time">5/26 18:35</span>
-                    </span>
-                </li>
-                <li class="data-list-item waves-effect waves-light" onclick="copyText(this)" onmouseover="hovertip('单击复制')" onmouseout="hovertipoff()">
-                    <p class="data-list-item-content">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam, repudiandae. Natus ipsum libero animi eligendi sapiente omnis esse doloremque magnam voluptas labore iste alias nam in sint, dicta quibusdam voluptatibus?
-                    </p>
-                    <span class="data-list-item-info">
-                        <span class="data-list-item-info-time">5/26 18:35</span>
-                    </span>
-                </li> -->
-                <!-- <div id="data-count-sign">
-                        
-                </div>
-            </ul> -->
-
         </div> 
 
         
 
         <div id="introduction-box" class="z-depth-2">
             <div>
-                <h1>关于</h1>
-                <a onclick="introductionOff()">关闭</a>
-                
+                <img src="pic/favicon@0,5x.png">
                 <p>PureCopy，是一个纯净的网页剪贴板，可以快速地跨平台传输文字。</p>
                 <p>你可以自由创建剪贴板，并在各个设备上打开以获取文字。</p>
                 <p>虽然有密码保护剪贴板，但是并不保证文字存放在此处的安全性。</p>
@@ -101,6 +58,7 @@
                 <p>请不要在剪贴板中传输机密信息。</p>
                 <p>就这么多，祝你使用愉快。</p>
                 <p><i>问询：pencilzyl@gmail.com</i></p>
+                <a onclick="introductionOff()">关闭</a>
             </div>
 
         </div> 
@@ -149,7 +107,7 @@
             <div id="change-password-box">你想为这个无密码剪贴板添加一个密码吗？<br/>
                 <button class="waves-effect waves-light white z-depth-1" id="change-password-button">是</button>
                 <button class="waves-effect waves-light white z-depth-1" id="change-password-button-no">否</button></div>
-            <div id="login-loading-box">正在加载</div>
+            <div id="login-loading-box">加载中…</div>
             <div id="login-input-box" class="z-depth-1">
             <form id="login-form">
                 <div class="input-field">
