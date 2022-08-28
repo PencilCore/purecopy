@@ -676,15 +676,26 @@ html{
 
 #introduction-box{
     text-align: center;
-    background-color: rgb(240, 240, 240);
+    background-color: rgba(240, 240, 240, 0.604);
     position: absolute;
     height: 100%;
     width: 100%;
     display: block;
     opacity: 0;
     transition: opacity 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
-    padding: 60px;
+    padding: 0;
     z-index: 5;
+    background-image: url("pic/favicon@0,5x.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#introduction-box div{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
 }
 
 #introduction-box a{

@@ -49,7 +49,6 @@
 
         <div id="introduction-box" class="z-depth-2">
             <div>
-                <img src="pic/favicon@0,5x.png">
                 <p>PureCopy，是一个纯净的网页剪贴板，可以快速地跨平台传输文字。</p>
                 <p>你可以自由创建剪贴板，并在各个设备上打开以获取文字。</p>
                 <p>虽然有密码保护剪贴板，但是并不保证文字存放在此处的安全性。</p>
